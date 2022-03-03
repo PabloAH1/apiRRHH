@@ -59,8 +59,7 @@ public class DepartamentoRestController {
 		Map<String, Object> response = new HashMap<>();
 		try {
 			departamentoNew = servicio.save(departamento);
-		} catch (DataAccessException e) {
-			// TODO: handle exception
+		} catch (DataAccessException e) {		
 			response.put("mensaje", "Error al realizar la consulta.");
 			response.put("error", e.getMessage().concat(": ").concat(e.getMessage()));
 			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.INTERNAL_SERVER_ERROR);
@@ -86,7 +85,6 @@ public class DepartamentoRestController {
 			servicio.save(departamentoActual);
 
 		} catch (DataAccessException e) {
-			// TODO: handle exception
 			response.put("mensaje", "Error al realizar la consulta.");
 			response.put("error", e.getMessage().concat(": ").concat(e.getMessage()));
 			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.INTERNAL_SERVER_ERROR);

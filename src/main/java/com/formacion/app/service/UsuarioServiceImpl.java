@@ -38,12 +38,5 @@ public class UsuarioServiceImpl implements UsuarioService {
 	public void delete(Long id) {
 		usuarioDao.deleteById(id);		
 	}
-
-	@Override
-	@Transactional
-	public Usuario login(String name, String password ) {		
-		//usuarioDao.findAll();		
-		return null;
-	}
 	
 }

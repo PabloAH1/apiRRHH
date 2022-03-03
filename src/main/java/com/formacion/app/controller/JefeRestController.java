@@ -92,7 +92,6 @@ public class JefeRestController {
 		jefeActual.setNombre(jefe.getNombre());
 		jefeActual.setSalario(jefe.getSalario());
 		jefeActual.setTelefono(jefe.getTelefono());
-		jefeActual.setDepartamento(jefe.getDepartamento());
 
 		servicio.save(jefeActual);
 

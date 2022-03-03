@@ -12,9 +12,5 @@ import com.formacion.app.entity.Jefe;
 
 @Repository
 public interface DepartamentoDao extends CrudRepository<Departamento,Long> {
-	@Query("from Empleado")
-	public List<Empleado> findAllEmpleados();
 	
-	@Query("from Jefe")
-	public List<Jefe> findAllJefe();
 }

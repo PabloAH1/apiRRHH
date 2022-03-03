@@ -96,7 +96,6 @@ public class EmpleadoRestController {
 		empleadoActual.setNombre(empleado.getNombre());
 		empleadoActual.setSalario(empleado.getSalario());
 		empleadoActual.setTelefono(empleado.getTelefono());
-		empleadoActual.setDepartamento(empleado.getDepartamento());
 
 		servicio.save(empleadoActual);
 

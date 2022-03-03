@@ -17,10 +17,7 @@ public class Usuario implements Serializable{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long CodUsuario;
-	
-	@Column(nullable = false)
-	private double salario;
+	private Long id;
 	
 	@Column(nullable = false, unique = true)
 	private String name;
@@ -28,20 +25,12 @@ public class Usuario implements Serializable{
 	@Column(nullable = false, unique = true)
 	private String password;
 
-	public Long getCodUsuario() {
-		return CodUsuario;
+	public Long getId() {
+		return id;
 	}
 
-	public void setCodUsuario(Long codUsuario) {
-		CodUsuario = codUsuario;
-	}
-
-	public double getSalario() {
-		return salario;
-	}
-
-	public void setSalario(double salario) {
-		this.salario = salario;
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 	public String getName() {

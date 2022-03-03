@@ -10,5 +10,4 @@ public interface UsuarioService {
 	public Usuario findById(Long id);	
 	public Usuario save(Usuario usuario);	
 	public void delete(Long id);
-	public Usuario login(String name, String password );
 }

@@ -22,30 +22,21 @@ public class Departamento implements Serializable{
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long CodDepartamento;
+	private Long id;
 	
 	@Column(nullable = false)
 	private String nombre;
 	
 	@Column(nullable = false)
 	private String ubicacion;
-	
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "CodEmpleado")
-	@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
-	private Empleado empleado;
 
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "CodJefe")
-	@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
-	private Jefe jefe;
 
-	public Long getCodDepartamento() {
-		return CodDepartamento;
+	public Long getId() {
+		return id;
 	}
 
-	public void setCodDepartamento(Long codDepartamento) {
-		CodDepartamento = codDepartamento;
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 	public String getNombre() {
@@ -63,22 +54,5 @@ public class Departamento implements Serializable{
 	public void setUbicacion(String ubicacion) {
 		this.ubicacion = ubicacion;
 	}
-
-	public Empleado getEmpleado() {
-		return empleado;
-	}
-
-	public void setEmpleado(Empleado empleado) {
-		this.empleado = empleado;
-	}
-
-	public Jefe getJefe() {
-		return jefe;
-	}
-
-	public void setJefe(Jefe jefe) {
-		this.jefe = jefe;
-	}
-	
 	
 }

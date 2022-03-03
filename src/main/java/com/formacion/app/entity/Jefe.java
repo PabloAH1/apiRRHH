@@ -8,9 +8,11 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 @Table(name = "jefes")
@@ -20,7 +22,7 @@ public class Jefe implements Serializable{
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long CodJefe;
+	private Long id;
 	
 	@Column(nullable = false, unique = true)
 	private String dni;
@@ -34,15 +36,18 @@ public class Jefe implements Serializable{
 	@Column(nullable = true)
 	private String telefono;
 	
-
+	@ManyToOne(fetch= FetchType.LAZY)
+	@JoinColumn(name="departamentos_id")
+	@JsonIgnoreProperties({"hibernateLazyInitializer","handler"})
 	private Departamento departamento;
+	
 
-	public Long getCodJefe() {
-		return CodJefe;
+	public Long getId() {
+		return id;
 	}
 
-	public void setCodJefe(Long codJefe) {
-		CodJefe = codJefe;
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 	public String getDni() {
@@ -84,6 +89,5 @@ public class Jefe implements Serializable{
 	public void setDepartamento(Departamento departamento) {
 		this.departamento = departamento;
 	}
-	
 	
 }
