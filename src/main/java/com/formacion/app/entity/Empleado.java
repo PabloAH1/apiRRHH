@@ -33,7 +33,7 @@ public class Empleado implements Serializable{
 	@Column(nullable = true)
 	private String telefono;
 	
-	@ManyToOne(fetch=FetchType.LAZY)
+
 	private Departamento departamento;
 
 	public Long getCodEmpleado() {
